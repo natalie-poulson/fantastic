@@ -8,18 +8,18 @@ class Uninspiring(Exception):
     pass
 
 
-class Magnificent(resource.Resource):
+class Fantastic(resource.Resource):
     isLeaf = True
 
     def render_GET(self, request):
         if choice([True, True, True, False]):
-            return "Magnificent!".encode('utf-8')  # Twisted expects bytes.
+            return "Fantastic!".encode('utf-8')  # Twisted expects bytes.
         else:
             raise Uninspiring()
 
 
 class run():
-    site = server.Site(Magnificent())
+    site = server.Site(Fantastic())
     reactor.listenTCP(12345, site)
     reactor.run()
 
